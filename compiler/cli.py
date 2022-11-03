@@ -139,8 +139,8 @@ def parse_stub(stub_filename):
     elif interpreter == 'bazel_tools/tools/python/py2wrapper.sh': # Default toolchain
         # Replace default toolchain python2 wrapper with default python2 on path
         interpreter = '/usr/bin/env python2'
-    elif '/' in interpreter:
-        interpreter = 'runfiles/python3_interpreter python_bin'
+#     elif '/' in interpreter:
+#         interpreter = 'runfiles/python3_interpreter python_bin'
 #         raise error.Error(
 #             'par files require a Python runtime that is ' +
 #             'installed on the system, not defined inside the workspace. Use ' +
