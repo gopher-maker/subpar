@@ -21,6 +21,8 @@ from subpar.compiler import cli
 if __name__ == '__main__':
     try:
         sys.exit(cli.main(sys.argv))
-    except KeyboardInterrupt:
-        # Don't print a stack trace, just exit silently
-        sys.exit(1)
+    except Exception as e:
+        print(e)
+#     except KeyboardInterrupt:
+#         # Don't print a stack trace, just exit silently
+#         sys.exit(1)
