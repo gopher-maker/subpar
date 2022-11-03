@@ -140,10 +140,11 @@ def parse_stub(stub_filename):
         # Replace default toolchain python2 wrapper with default python2 on path
         interpreter = '/usr/bin/env python2'
     elif '/' in interpreter:
-        raise error.Error(
-            'par files require a Python runtime that is ' +
-            'installed on the system, not defined inside the workspace. Use ' +
-            'a `py_runtime` with an absolute path, not a label.')
+        interpreter = 'runfiles/python3_interpreter python_bin'
+#         raise error.Error(
+#             'par files require a Python runtime that is ' +
+#             'installed on the system, not defined inside the workspace. Use ' +
+#             'a `py_runtime` with an absolute path, not a label.')
     else:
         interpreter = '/usr/bin/env %s' % interpreter
 
